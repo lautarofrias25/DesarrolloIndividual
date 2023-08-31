@@ -1,0 +1,14 @@
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\bin\Debug\net7.0\ConsoleApp.exe
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\bin\Debug\net7.0\ConsoleApp.deps.json
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\bin\Debug\net7.0\ConsoleApp.runtimeconfig.json
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\bin\Debug\net7.0\ConsoleApp.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\bin\Debug\net7.0\ConsoleApp.pdb
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\obj\Debug\net7.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\obj\Debug\net7.0\ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\obj\Debug\net7.0\ConsoleApp.AssemblyInfo.cs
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\obj\Debug\net7.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\obj\Debug\net7.0\ConsoleApp.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\obj\Debug\net7.0\refint\ConsoleApp.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\obj\Debug\net7.0\ConsoleApp.pdb
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\obj\Debug\net7.0\ConsoleApp.genruntimeconfig.cache
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Primera parte tp individual\ConsoleApp\obj\Debug\net7.0\ref\ConsoleApp.dll
