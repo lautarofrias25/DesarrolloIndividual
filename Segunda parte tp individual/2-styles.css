@@ -1,0 +1,37 @@
+h1 {
+    color: red;
+    font-size: 3em;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+}
+
+h3 {
+    color: rgb(243, 146, 0);
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+}
+
+p {
+    color: black;
+    font-size: 1.5em;
+    text-align: justify;
+    text-shadow: 2px 2px 2px white;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px 10% 02 10%;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10% 0 10%;
+}
+
+body {
+    background-image: url("https://c.wallhere.com/photos/22/4b/JavaScript_code_web_development-22619.jpg!d");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>HTML con Bootstrap</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Mi Página con Bootstrap</h1>
+
+         <div class="row mt-4">
+            <div class="col-md-12">
+                <h2>Ingreso de items</h2>
+                <p>En las siguientes listas podras ingresar items con nombres. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore aut quo non assumenda. Atque facilis blanditiis sed officia, id quisquam hic ullam tempore earum, dicta similique dolorum ratione quo esse?</p>
+            </div>
+        </div>
+        <!-- Row 2: Tarjetas -->
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="" class="card-img-top" id="img1" alt="Imagen de la tarjeta">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cardt1">Tarjeta 1</h5>
+                        <p class="card-text" id="cardte1">Contenido de la tarjeta 1.</p>
+                    </div>
+                </div>
+                <form id="tarjeta1" onsubmit="actualizarTarjeta(event, '1')">
+                    <div class="mb-3">
+                      <label for="tituloTarjeta1" class="form-label">Titulo del item</label>
+                      <input type="text" class="form-control" id="tituloTarjeta1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="descripcionTarjeta1" class="form-label">Descripcion del item</label>
+                      <input type="text" class="form-control" id="descripcionTarjeta1">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="boton1">Enviar</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="" class="card-img-top" id="img2" alt="Imagen de la tarjeta">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cardt2">Tarjeta 2</h5>
+                        <p class="card-text" id="cardte2">Contenido de la tarjeta 2.</p>
+                    </div>
+                </div>
+                <form id="tarjeta2" onsubmit="actualizarTarjeta(event, '2')">
+                    <div class="mb-3">
+                      <label for="tituloTarjeta2" class="form-label">Titulo del item</label>
+                      <input type="text" class="form-control" id="tituloTarjeta2">
+                    </div>
+                    <div class="mb-3">
+                      <label for="descripcionTarjeta2" class="form-label">Descripcion del item</label>
+                      <input type="text" class="form-control" id="descripcionTarjeta2">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="" class="card-img-top" id="img3" alt="Imagen de la tarjeta">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cardt3">Tarjeta 3</h5>
+                        <p class="card-text" id="cardte3">Contenido de la tarjeta 3.</p>
+                    </div>
+                </div>
+                <form id="tarjeta3" onsubmit="actualizarTarjeta(event, '3')">
+                    <div class="mb-3">
+                      <label for="tituloTarjeta3" class="form-label">Titulo del item</label>
+                      <input type="text" class="form-control" id="tituloTarjeta3">
+                    </div>
+                    <div class="mb-3">
+                      <label for="descripcionTarjeta3" class="form-label">Descripcion del item</label>
+                      <input type="text" class="form-control" id="descripcionTarjeta3">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Lista de Ítems</h3>
+                <ul>
+                    <li id="li1">Ítem 1</li>
+                    <li id="li2">Ítem 2</li>
+                    <li id="li3">Ítem 3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="4-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+
+
+
+
+
