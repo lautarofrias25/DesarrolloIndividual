@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Tercera parte tp individual.props" />
+</Project>

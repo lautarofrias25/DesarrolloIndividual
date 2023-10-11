@@ -1,0 +1,53 @@
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.csproj.AssemblyReference.cache
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.AssemblyInfoInputs.cache
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.AssemblyInfo.cs
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.csproj.CoreCompileInputs.cache
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\appsettings.json
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Tercera parte tp individual.exe
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Tercera parte tp individual.deps.json
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Tercera parte tp individual.runtimeconfig.json
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Tercera parte tp individual.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Tercera parte tp individual.pdb
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Humanizer.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Npgsql.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\staticwebassets\msbuild.Tercera parte tp individual.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\staticwebassets\msbuild.build.Tercera parte tp individual.props
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Tercera parte tp individual.props
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Tercera parte tp individual.props
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\scopedcss\bundle\Tercera parte tp individual.styles.css
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.csproj.CopyComplete
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\refint\Tercera parte tp individual.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.pdb
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\Tercera parte tp individual.genruntimeconfig.cache
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\obj\Debug\net7.0\ref\Tercera parte tp individual.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Serilog.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Serilog.AspNetCore.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Serilog.Extensions.Hosting.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Serilog.Extensions.Logging.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Serilog.Formatting.Compact.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Serilog.Settings.Configuration.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Serilog.Sinks.Debug.dll
+C:\Users\lauta\Desktop\Tp Individual Desarrollo\Tercera parte tp individual\bin\Debug\net7.0\Serilog.Sinks.File.dll
