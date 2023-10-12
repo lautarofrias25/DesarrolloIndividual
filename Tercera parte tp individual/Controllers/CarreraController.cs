@@ -4,6 +4,7 @@ using Serilog;
 using Tercera_parte_tp_individual.Data;
 using Tercera_parte_tp_individual.Data.DTOs;
 using Tercera_parte_tp_individual.Data.Modelos;
+using Tercera_parte_tp_individual.Services;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,114 +16,45 @@ namespace Tercera_parte_tp_individual.Controllers
     public class CarreraController : ControllerBase
     {
         private readonly TP3Context _context;
-        public CarreraController(TP3Context context) 
+        private readonly CarreraService _service;
+        public CarreraController(TP3Context context, CarreraService service) 
         {
             _context = context;
+            _service = service;
         }
         [HttpGet]
-        public async Task<ActionResult<ICollection<GetCarreraDto>>> GetCarreras()
+        public ActionResult<ICollection<GetCarreraDto>> GetCarreras()
         {
-            try
+            var carrerasDto = _service.GetCarreras();
+            if (carrerasDto == null)
             {
-                var carreras = await _context.Carreras.ToListAsync();
-                if (carreras == null)
-                {
-                    return NoContent();
-                }
-                var alumnos = await _context.Alumnos.ToListAsync();
-                var carrerasDto = new List<GetCarreraDto>();
-                if (alumnos != null)
-                {
-                    foreach (var carrera in carreras)
-                    {
-                        var carreraDto = new GetCarreraDto
-                        {
-                            id = carrera.id,
-                            nombre = carrera.nombre,
-                            descripcion = carrera.descripcion,
-                            alumnos = new List<GetAlumnoDto>()
-                        };
-                        var alumnoscond = alumnos.Where(a => a.CarreraId == carreraDto.id);
-                        foreach (var alumno in alumnoscond)
-                        {
-                            GetAlumnoDto alumnoDto = new GetAlumnoDto();
-                            alumnoDto.id = alumno.id;
-                            alumnoDto.nombre = alumno.nombre;
-                            alumnoDto.apellido = alumno.apellido;
-                            alumnoDto.legajo = alumno.legajo;
-                            alumnoDto.CarreraId = alumno.CarreraId;
-                            carreraDto.alumnos.Add(alumnoDto);
-                        }
-                        carrerasDto.Add(carreraDto);
-                    }
-                }
-                return Ok(carrerasDto);
+                return NotFound(carrerasDto);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(carrerasDto);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<GetCarreraDto>> GetCarrera(int id)
+        public ActionResult<GetCarreraDto> GetCarrera(int id)
         {
-            var carrera = await _context.Carreras.FindAsync(id);
-            if (carrera == null)
+            var carreraDto = _service.GetCarrera(id);
+            if (carreraDto == null)
             {
-                return NotFound();
+                return NotFound(carreraDto);
             }
-            var carreraDto = new GetCarreraDto
-            {
-                id = carrera.id,
-                nombre = carrera.nombre,
-                descripcion = carrera.descripcion,
-                alumnos = new List<GetAlumnoDto>()
-            };
-            var alumnos = await _context.Alumnos.ToListAsync();
-            foreach (var alumno in alumnos.Where(a => a.CarreraId == id))
-            {
-                var alumnoDto = new GetAlumnoDto
-                {
-                    id = alumno.id,
-                    nombre = alumno.nombre,
-                    apellido = alumno.apellido,
-                    legajo = alumno.legajo,
-                    CarreraId = carrera.id,
-                };
-                carreraDto.alumnos.Add(alumnoDto);            };
-            return Ok(carreraDto) ;
+            return Ok(carreraDto);
         }
 
         [HttpPost]
-        public async Task<OkObjectResult> PostCarrera([FromBody] CreateCarreraDto carrera)
+        public OkObjectResult PostCarrera([FromBody] CreateCarreraDto carrera)
         {
-            Carrera carreraToPost = new Carrera();
-            carreraToPost.nombre = carrera.nombre;
-            carreraToPost.descripcion = carrera.descripcion;
-            await _context.Carreras.AddAsync(carreraToPost);
-            await _context.SaveChangesAsync();
+            _service.PostCarrera(carrera);
             return Ok("Carrera creada correctamente");
         }
 
         [HttpPut]
-        public async Task<ActionResult<Carrera>> PutCarrera(UpdateCarreraDto carreraDto)
+        public ActionResult<Carrera> PutCarrera(UpdateCarreraDto carreraDto)
         {
-            var dbCarrera = await _context.Carreras.FindAsync(carreraDto.id);
-            if(dbCarrera == null)
-            {
-                return NotFound();
-            }
-
-            if (carreraDto.nombre.Length != 0)
-            {
-                dbCarrera.nombre = carreraDto.nombre;
-            }
-            if (carreraDto.descripcion.Length != 0)
-            {
-                dbCarrera.descripcion = carreraDto.descripcion;
-            }
-            await _context.SaveChangesAsync();
+            var dbCarrera = _service.PutCarrera(carreraDto);
 
             return Ok(dbCarrera);
         }
@@ -134,15 +66,13 @@ namespace Tercera_parte_tp_individual.Controllers
         }*/
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Carrera>> DeleteCarrera(int id)
+        public ActionResult<Carrera> DeleteCarrera(int id)
         {
-            var carrera = await _context.Carreras.FindAsync(id);
+            var carrera = _service.DeleteCarrera(id);
             if (carrera == null)
             {
-                return NotFound();
+                return NotFound(carrera);
             }
-            _context.Carreras.Remove(carrera);
-            await _context.SaveChangesAsync();
             return Ok(carrera);
         }
 

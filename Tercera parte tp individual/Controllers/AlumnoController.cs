@@ -4,6 +4,7 @@ using Tercera_parte_tp_individual.Data.DTOs;
 using Tercera_parte_tp_individual.Data.Modelos;
 using Tercera_parte_tp_individual.Data;
 using Microsoft.EntityFrameworkCore;
+using Tercera_parte_tp_individual.Services;
 
 namespace Tercera_parte_tp_individual.Controllers
 {
@@ -12,67 +13,41 @@ namespace Tercera_parte_tp_individual.Controllers
     public class AlumnoController : ControllerBase
     {
         private readonly TP3Context _context;
-        public AlumnoController(TP3Context context)
+        private readonly AlumnoService _service;
+        public AlumnoController(TP3Context context, AlumnoService service)
         {
             _context = context;
+            _service = service;
         }
         [HttpGet]
         public async Task<ActionResult<ICollection<GetAlumnoDto>>> GetAlumnos()
         {
-            var alumnos = await _context.Alumnos.ToListAsync();
-            var alumnosDto = new List<GetAlumnoDto>();
-            foreach (var alumno in alumnos)
-            {
-                var alumnoDto = new GetAlumnoDto();
-                alumnoDto.id = alumno.id;
-                alumnoDto.nombre = alumno.nombre;
-                alumnoDto.apellido = alumno.apellido;
-                alumnoDto.legajo = alumno.legajo;
-                alumnoDto.CarreraId = alumno.CarreraId;
-                alumnosDto.Add(alumnoDto);
-            }
+            var alumnos = _service.GetAlumnos();
             if (alumnos == null)
             {
                 return NoContent();
             }
-            return Ok(alumnosDto);
+            return Ok(alumnos);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<GetAlumnoDto>> GetAlumno(int id)
+        public ActionResult<GetAlumnoDto> GetAlumno(int id)
         {
-            var alumno = await _context.Alumnos.FindAsync(id);
-            var alumnoDto = new GetAlumnoDto();
-            alumnoDto.id = alumno.id;
-            alumnoDto.nombre = alumno.nombre;
-            alumnoDto.apellido = alumno.apellido;
-            alumnoDto.legajo = alumno.legajo;
-            alumnoDto.CarreraId = alumno.CarreraId;
+            var alumno = _service.GetAlumno(id);
             if (alumno == null)
             {
                 return NotFound();
             }
-            return Ok(alumnoDto);
+            return Ok(alumno);
         }
 
         [HttpPost]
-        public async Task<ObjectResult> PostAlumno([FromBody] CreateAlumnoDto alumno)
+        public ObjectResult PostAlumno([FromBody] CreateAlumnoDto alumno)
         {
-            var carrera = await _context.Carreras.FindAsync(alumno.CarreraId);
-            if (carrera != null)
+            var alumnot = _service.PostAlumno(alumno);
+            if (alumnot == null)
             {
-                Alumno alumnoToPost = new Alumno();
-                alumnoToPost.nombre = alumno.nombre;
-                alumnoToPost.apellido = alumno.apellido;
-                alumnoToPost.legajo = alumno.legajo;
-                alumnoToPost.carrera = carrera;
-                await _context.Alumnos.AddAsync(alumnoToPost);
-                await _context.SaveChangesAsync();
-                
-            }
-            if (carrera == null) 
-            { 
-            return NotFound("Carrera no encontrada");
+                return NotFound("Carrera no encontrada");
             }
             return Ok("Alumno creado correctamente");
         }
@@ -100,15 +75,13 @@ namespace Tercera_parte_tp_individual.Controllers
         }*/
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Alumno>> DeleteAlumno(int id)
+        public ActionResult<Alumno> DeleteAlumno(int id)
         {
-            var alumno = await _context.Alumnos.FindAsync(id);
+            var alumno = _service.DeleteAlumno(id);
             if (alumno == null)
             {
-                return NotFound();
+                return NotFound(alumno);
             }
-            _context.Alumnos.Remove(alumno);
-            await _context.SaveChangesAsync();
             return Ok(alumno);
         }
     }
