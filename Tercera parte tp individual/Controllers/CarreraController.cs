@@ -15,11 +15,9 @@ namespace Tercera_parte_tp_individual.Controllers
     [ApiController]
     public class CarreraController : ControllerBase
     {
-        private readonly TP3Context _context;
-        private readonly CarreraService _service;
-        public CarreraController(TP3Context context, CarreraService service) 
+        private readonly ICarreraService _service;
+        public CarreraController(TP3Context context, ICarreraService service) 
         {
-            _context = context;
             _service = service;
         }
         [HttpGet]

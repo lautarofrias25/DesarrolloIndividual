@@ -12,15 +12,13 @@ namespace Tercera_parte_tp_individual.Controllers
     [ApiController]
     public class AlumnoController : ControllerBase
     {
-        private readonly TP3Context _context;
-        private readonly AlumnoService _service;
-        public AlumnoController(TP3Context context, AlumnoService service)
+        private readonly IAlumnoService _service;
+        public AlumnoController(TP3Context context, IAlumnoService service)
         {
-            _context = context;
             _service = service;
         }
         [HttpGet]
-        public async Task<ActionResult<ICollection<GetAlumnoDto>>> GetAlumnos()
+        public ActionResult<ICollection<GetAlumnoDto>> GetAlumnos()
         {
             var alumnos = _service.GetAlumnos();
             if (alumnos == null)
