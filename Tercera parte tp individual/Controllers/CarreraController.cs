@@ -21,9 +21,9 @@ namespace Tercera_parte_tp_individual.Controllers
             _service = service;
         }
         [HttpGet]
-        public ActionResult<ICollection<GetCarreraDto>> GetCarreras()
+        public async Task<ActionResult<ICollection<GetCarreraDto>>> GetCarrerasAsync()
         {
-            var carrerasDto = _service.GetCarreras();
+            var carrerasDto = await _service.GetCarreras();
             if (carrerasDto == null)
             {
                 return NotFound(carrerasDto);
@@ -32,9 +32,9 @@ namespace Tercera_parte_tp_individual.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<GetCarreraDto> GetCarrera(int id)
+        public async Task<ActionResult<GetCarreraDto>> GetCarreraAsync(int id)
         {
-            var carreraDto = _service.GetCarrera(id);
+            var carreraDto = await _service.GetCarrera(id);
             if (carreraDto == null)
             {
                 return NotFound(carreraDto);
@@ -43,16 +43,16 @@ namespace Tercera_parte_tp_individual.Controllers
         }
 
         [HttpPost]
-        public OkObjectResult PostCarrera([FromBody] CreateCarreraDto carrera)
+        public async Task<ActionResult<Carrera>> PostCarrera([FromBody] CreateCarreraDto carrera)
         {
-            _service.PostCarrera(carrera);
-            return Ok("Carrera creada correctamente");
+            var carreraToSend = await _service.PostCarrera(carrera);
+            return Ok(carreraToSend);
         }
 
         [HttpPut]
-        public ActionResult<Carrera> PutCarrera(UpdateCarreraDto carreraDto)
+        public async Task<ActionResult<Carrera>> PutCarreraAsync(UpdateCarreraDto carreraDto)
         {
-            var dbCarrera = _service.PutCarrera(carreraDto);
+            var dbCarrera = await _service.PutCarrera(carreraDto);
 
             return Ok(dbCarrera);
         }
@@ -64,9 +64,9 @@ namespace Tercera_parte_tp_individual.Controllers
         }*/
 
         [HttpDelete("{id}")]
-        public ActionResult<Carrera> DeleteCarrera(int id)
+        public async Task<ActionResult<Carrera>> DeleteCarreraAsync(int id)
         {
-            var carrera = _service.DeleteCarrera(id);
+            var carrera = await _service.DeleteCarrera(id);
             if (carrera == null)
             {
                 return NotFound(carrera);

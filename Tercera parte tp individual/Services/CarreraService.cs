@@ -93,14 +93,15 @@ namespace Tercera_parte_tp_individual.Services
             return carrerasDto;
         }
 
-        public async void PostCarrera([FromBody] CreateCarreraDto carrera)
+        public async Task<ActionResult<Carrera>> PostCarrera([FromBody] CreateCarreraDto carrera)
         {
             Carrera carreraToPost = new Carrera();
             carreraToPost.nombre = carrera.nombre;
             carreraToPost.descripcion = carrera.descripcion;
             await _context.Carreras.AddAsync(carreraToPost);
             await _context.SaveChangesAsync();
-            return;
+            var carreraToSend = await _context.Carreras.FindAsync(carreraToPost.id);
+            return (carreraToSend);
         }
 
         public async Task<ActionResult<Carrera>> PutCarrera(UpdateCarreraDto carreraDto)
@@ -122,5 +123,7 @@ namespace Tercera_parte_tp_individual.Services
             await _context.SaveChangesAsync();
             return dbCarrera;
         }
+
+       
     }
 }
