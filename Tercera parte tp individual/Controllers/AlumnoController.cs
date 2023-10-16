@@ -18,9 +18,9 @@ namespace Tercera_parte_tp_individual.Controllers
             _service = service;
         }
         [HttpGet]
-        public ActionResult<ICollection<GetAlumnoDto>> GetAlumnos()
+        public async Task<ActionResult<ICollection<GetAlumnoDto>>> GetAlumnosAsync()
         {
-            var alumnos = _service.GetAlumnos();
+            var alumnos = await _service.GetAlumnos();
             if (alumnos == null)
             {
                 return NoContent();
@@ -29,9 +29,9 @@ namespace Tercera_parte_tp_individual.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<GetAlumnoDto> GetAlumno(int id)
+        public async Task<ActionResult<GetAlumnoDto>> GetAlumnoAsync(int id)
         {
-            var alumno = _service.GetAlumno(id);
+            var alumno = await _service.GetAlumno(id);
             if (alumno == null)
             {
                 return NotFound();
@@ -40,14 +40,14 @@ namespace Tercera_parte_tp_individual.Controllers
         }
 
         [HttpPost]
-        public ObjectResult PostAlumno([FromBody] CreateAlumnoDto alumno)
+        public async Task<ActionResult<Alumno>> PostAlumnoAsync([FromBody] CreateAlumnoDto alumno)
         {
-            var alumnot = _service.PostAlumno(alumno);
+            var alumnot = await _service.PostAlumno(alumno);
             if (alumnot == null)
             {
                 return NotFound("Carrera no encontrada");
             }
-            return Ok("Alumno creado correctamente");
+            return Ok(alumnot);
         }
 
         /*[HttpPut]
@@ -73,9 +73,9 @@ namespace Tercera_parte_tp_individual.Controllers
         }*/
 
         [HttpDelete("{id}")]
-        public ActionResult<Alumno> DeleteAlumno(int id)
+        public async Task<ActionResult<Alumno>> DeleteAlumnoAsync(int id)
         {
-            var alumno = _service.DeleteAlumno(id);
+            var alumno = await _service.DeleteAlumno(id);
             if (alumno == null)
             {
                 return NotFound(alumno);

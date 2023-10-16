@@ -1,10 +1,9 @@
 import './Carreras.css'
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
-function Carrera (){
-    const [carreras, setCarreras] = useState([]);
+function Carrera ({carreras, setCarreras, isLoading, setAlumnos, alumnos}){
+    
     const [nuevaCarrera, setNuevaCarrera] = useState({
         nombre: '',
         descripcion: '',
@@ -15,25 +14,7 @@ function Carrera (){
         descripcion: '',
     });
     const [editing, setEditing] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-  
-    useEffect(() => {
-      // Función para cargar las carreras desde la API
-        const cargarCarreras = async () => {
-        try {
-            setIsLoading(true);
-            const response = await axios.get('https://localhost:7056/api/Carrera');
-            setCarreras(response.data.value);
-        } catch (error) {
-            console.error('Error al cargar carreras:', error);
-        } finally {
-            setIsLoading(false);
-        }
-      };
-  
-      cargarCarreras();
-      
-    }, []);
+    
   
     const handleNuevaCarreraChange = (event) => {
         event.preventDefault();
@@ -49,7 +30,7 @@ function Carrera (){
             descripcion: nuevaCarrera.descripcion,
             }); 
         // Agrega la nueva carrera a la lista de carreras locales
-        const carreraResponse = {
+        let carreraResponse = {
             id: response.data.value.id,
             nombre: response.data.value.nombre,
             descripcion: response.data.value.descripcion,
@@ -72,14 +53,14 @@ function Carrera (){
                 descripcion: carreraEditada.descripcion,
                 }); 
             // Agrega la nueva carrera a la lista de carreras locales
-            const long = carreras.find(carrera => carrera.id === id).alumnos; 
-            const carreraResponse = {
+            let long = carreras.find(carrera => carrera.id === id).alumnos; 
+            let carreraResponse = {
                 id: response.data.value.id,
                 nombre: response.data.value.nombre,
                 descripcion: response.data.value.descripcion,
                 alumnos: long
             };
-            const uptadedCarreras = carreras.map((carrera) => (carrera.id === id ? carreraResponse : carrera));
+            let uptadedCarreras = carreras.map((carrera) => (carrera.id === id ? carreraResponse : carrera));
             setCarreras(uptadedCarreras);
             // Limpia el campo del formulario después de agregar la carrera
             setCarreraEditada('');
@@ -98,8 +79,10 @@ function Carrera (){
     const handleEliminarCarrera = async (id) => {
         try {
             await axios.delete(`https://localhost:7056/api/Carrera/${id}`);
-            const uptadedCarreras = carreras.filter((carrera) => carrera.id !== id);
-            setCarreras(uptadedCarreras);
+            let updatedCarreras = carreras.filter((carrera) => carrera.id !== id);
+            let updatedAlumnos = alumnos.filter((alumno) => alumno.carreraId !== id);
+            setAlumnos(updatedAlumnos);
+            setCarreras(updatedCarreras);
         }catch (error) {
             console.error('Error al eliminar una carrera:', error);
         }
