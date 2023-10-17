@@ -50,27 +50,16 @@ namespace Tercera_parte_tp_individual.Controllers
             return Ok(alumnot);
         }
 
-        /*[HttpPut]
-        public async Task<ActionResult<Carrera>> PutCarrera(UpdateCarreraDto carreraDto)
+        [HttpPut]
+        public async Task<ActionResult<Alumno>> PutAlumno(UpdateAlumnoDto alumnoDto)
         {
-            var dbCarrera = await _context.Carreras.FindAsync(carreraDto.id);
-            if (dbCarrera == null)
+            var alumnoMod = await _service.PutAlumno(alumnoDto);
+            if (alumnoMod == null)
             {
                 return NotFound();
             }
-
-            if (carreraDto.nombre.Length != 0)
-            {
-                dbCarrera.nombre = carreraDto.nombre;
-            }
-            if (carreraDto.descripcion.Length != 0)
-            {
-                dbCarrera.descripcion = carreraDto.descripcion;
-            }
-            await _context.SaveChangesAsync();
-
-            return Ok(dbCarrera);
-        }*/
+            return Ok(alumnoMod);
+        }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<Alumno>> DeleteAlumnoAsync(int id)

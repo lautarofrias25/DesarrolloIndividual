@@ -71,5 +71,20 @@ namespace Tercera_parte_tp_individual.Services
             }
             return (alumnoToPost);
         }
+
+        public async Task<ActionResult<Alumno>> PutAlumno([FromBody] UpdateAlumnoDto alumnoDto)
+        {
+            var alumnoDB = await _context.Alumnos.FindAsync(alumnoDto.id);
+            if (alumnoDB != null)
+            {
+                alumnoDB.nombre = alumnoDto.nombre;
+                alumnoDB.legajo = alumnoDto.legajo;
+                alumnoDB.apellido = alumnoDto.apellido;
+                alumnoDB.CarreraId = alumnoDto.CarreraId;
+                await _context.SaveChangesAsync();
+                return (alumnoDB);
+            }
+            return (alumnoDB);
+        }
     }
 }

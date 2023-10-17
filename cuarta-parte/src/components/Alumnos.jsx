@@ -11,6 +11,7 @@ export default function Alumnos({carreras, isLoading, alumnos, setAlumnos, isLoa
         carreraId: 0,
     });
     const [alumnoEditado, setAlumnoEditado] = useState({
+        id: 0,
         nombre: '',
         apellido: '',
         legajo: '',
@@ -57,8 +58,9 @@ export default function Alumnos({carreras, isLoading, alumnos, setAlumnos, isLoa
 
     const handleEditarAlumno = async (id) => {
         try {
+            setAlumnoEditado({ ...alumnoEditado, id: id });
             // Realiza una solicitud para editar una carrera en la API
-            const response = await axios.put(`https://localhost:7056/api/Alumno`, { alumnoEditado }); 
+            const response = await axios.put(`https://localhost:7056/api/Alumno`,  alumnoEditado ); 
             // Agrega la nueva carrera a la lista de carreras locales
             const alumnoResponse = {
                 id: response.data.value.id,
@@ -120,7 +122,12 @@ export default function Alumnos({carreras, isLoading, alumnos, setAlumnos, isLoa
                                 <td>{editing === alumno.id ? <input type="text" name="apellido" value={alumnoEditado.apellido} onChange={handleEditarAlumnoChange} /> : alumno.apellido}</td>
                                 <td>
                                     {editing === alumno.id ? (
-                                        <input type="text" name="nombre" value={alumnoEditado && alumnoEditado.nombre} onChange={handleEditarAlumnoChange} />
+                                        <select name="carreraId" onChange={handleEditarAlumnoChange}>
+                                            <option value="">carreras</option>
+                                            {carreras.map((carrera) => (
+                                                <option name="carreraId" value={carrera.id} key={carrera.id}>{carrera.nombre}</option>
+                                            ))}
+                                        </select>
                                     ) : (
                                         carreras.length === 0 ? (
                                             // Maneja el caso cuando carreras está vacío

@@ -9,6 +9,7 @@ namespace Tercera_parte_tp_individual.Services
         Task<ActionResult<ICollection<GetAlumnoDto>>> GetAlumnos();
         Task<ActionResult<GetAlumnoDto>> GetAlumno(int id);
         Task<ActionResult<Alumno>> PostAlumno([FromBody] CreateAlumnoDto alumno);
+        Task<ActionResult<Alumno>> PutAlumno([FromBody] UpdateAlumnoDto alumnoDto);
         Task<ActionResult<Alumno>> DeleteAlumno(int id);
     }
 }

@@ -56,12 +56,7 @@ namespace Tercera_parte_tp_individual.Controllers
 
             return Ok(dbCarrera);
         }
-        /*[HttpPut]
-        public async Task<ActionResult<Carrera>> AddAlumno (int id)
-        {
-            var alumno = await _context.Alumnos.FindAsync(id);
-
-        }*/
+        
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<Carrera>> DeleteCarreraAsync(int id)

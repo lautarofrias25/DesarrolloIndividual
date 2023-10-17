@@ -111,15 +111,9 @@ namespace Tercera_parte_tp_individual.Services
             {
                 return dbCarrera;
             }
+            dbCarrera.nombre = carreraDto.nombre;
+            dbCarrera.descripcion = carreraDto.descripcion;
 
-            if (carreraDto.nombre.Length != 0)
-            {
-                dbCarrera.nombre = carreraDto.nombre;
-            }
-            if (carreraDto.descripcion.Length != 0)
-            {
-                dbCarrera.descripcion = carreraDto.descripcion;
-            }
             await _context.SaveChangesAsync();
             return dbCarrera;
         }
